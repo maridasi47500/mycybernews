@@ -1,0 +1,22 @@
+<div class="col-sm-<%=col%>" id="<%= dom_id post %>">
+    <div class="card">
+      <img class="card-img-top" src="/uploads/<%=post.image%>" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%=post.title%></h5>
+      <p class="card-text"><%=post.title%></p>
+      <p class="card-text"><small class="text-muted">Modifié <%=time_ago_in_words(post.updated_at)%></small></p>
+    </div>
+  </div>
+
+  <p>
+    <strong>User:</strong>
+    <%= post.user_id %>
+  </p>
+
+  <p>
+    <strong>Cat:</strong>
+    <%= post.cat_id %>
+    <%= link_to "voir",post %>
+  </p>
+
+</div>

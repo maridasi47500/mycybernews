@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<div id="posts">
+  <div class="row">
+    <%=@posts[0] ? (render "posts/post",post: @posts[0],col:6 ) : ""%>
+    <%=@posts[1] ? (render "posts/post",post: @posts[1],col:3 ) : ""%>
+    <%=@posts[2] ? (render "posts/post",post: @posts[2],col:3 ) : ""%>
+  </div>
+  <div class="row">
+    <%=@posts[3] ? ( render "posts/post",post: @posts[3],col:3) : "" %>
+    <%=@posts[4] ? ( render "posts/post",post: @posts[4],col:3) : "" %>
+    <%=@posts[5] ? ( render "posts/post",post: @posts[5],col:3) : "" %>
+    <%=@posts[6] ? ( render "posts/post",post: @posts[6],col:3) : "" %>
+  </div          ? (>
+  <div class="row">
+    <%=@posts[7] ? ( render "posts/post",post: @posts[7],col:3) : "" %>
+    <%=@posts[8] ? ( render "posts/post",post: @posts[8],col:3) : "" %>
+    <%=@posts[9] ? ( render "posts/post",post: @posts[9],col:6) : "" %>
+  </div>
+</div>
+<%if @postsprecedent%>
+<%= link_to "post page précédente", posts_path(page: (@page-10)) %>
+<%end%>
+<%if @postssuivant%>
+<%= link_to "post page suivante", posts_path(page: (@page+10)) %>
+<%end%>
+
+<%= link_to "New post", new_post_path %>
